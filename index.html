@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurante Casa Félix – Villarrobledo</title>
+  <meta name="description" content="Restaurante Casa Félix en Villarrobledo, Albacete. Cocina tradicional manchega: manitas de cerdo, codillo en salsa, mariscos frescos y tarta de la abuela. Reserva tu mesa." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Restaurante Casa Félix – Villarrobledo" />
+  <meta property="og:description" content="Cocina tradicional manchega en el corazón de Castilla–La Mancha. Ingredientes de temporada, recetas de siempre." />
+  <meta property="og:image" content="imagenes/IMG_9459.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <link rel="icon" href="imagenes/thumbs/IMG_9459.webp" type="image/webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Restaurante Casa Félix",
+    "image": "imagenes/IMG_9459.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Senda Molinera, 6",
+      "addressLocality": "Villarrobledo",
+      "addressRegion": "Albacete",
+      "postalCode": "02600",
+      "addressCountry": "ES"
+    },
+    "telephone": "+34967143375",
+    "servesCuisine": "Cocina manchega tradicional",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "11:00",
+      "closes": "01:00"
+    },
+    "priceRange": "€€",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "3.6",
+      "bestRating": "5",
+      "ratingCount": "42"
+    }
+  }
+  </script>
+  <style>
+    /* ── Variables ── */
+    :root {
+      --gold:    #c9a84c;
+      --gold-lt: #e8d28a;
+      --dark:    #1a1208;
+      --dark2:   #2c1f0e;
+      --cream:   #f9f4ec;
+      --cream2:  #efe8d8;
+      --text:    #3d2b1f;
+      --text-lt: #7a6152;
+      --white:   #ffffff;
+      --radius:  12px;
+      --shadow:  0 8px 40px rgba(0,0,0,.18);
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 6%; background: transparent;
+      transition: background .4s, padding .4s;
+    }
+    nav.scrolled { background: rgba(26,18,8,.95); padding: 12px 6%; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--gold); letter-spacing: .04em; text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--white); text-decoration: none; font-size: .9rem; letter-spacing: .06em; text-transform: uppercase; opacity: .85; transition: opacity .2s, color .2s; }
+    .nav-links a:hover { opacity: 1; color: var(--gold); }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 0 6%;
+      background:
+        linear-gradient(to bottom, rgba(26,18,8,.68) 0%, rgba(26,18,8,.82) 100%);
+      color: var(--white);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: -5%; z-index: 0;
+      background: url('imagenes/IMG_9459.webp') center/cover no-repeat;
+      filter: brightness(.5);
+    }
+    .hero > * { position: relative; z-index: 1; }
+    .hero-badge { display: inline-block; border: 1px solid var(--gold); color: var(--gold); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; padding: 6px 18px; border-radius: 50px; margin-bottom: 1.6rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 7vw, 5.5rem); line-height: 1.1; margin-bottom: 1.2rem; }
+    .hero h1 em { font-style: italic; color: var(--gold-lt); }
+    .hero p { font-size: clamp(1rem, 2vw, 1.2rem); font-weight: 300; max-width: 540px; line-height: 1.8; opacity: .9; margin-bottom: 2.4rem; }
+    .btn { display: inline-block; padding: 16px 38px; border-radius: 50px; font-size: .9rem; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; font-weight: 600; transition: all .3s; cursor: pointer; border: none; }
+    .btn-gold { background: var(--gold); color: var(--dark); }
+    .btn-gold:hover { background: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(201,168,76,.4); }
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.5); margin-left: 1rem; }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+    .hero-scroll { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: .5rem; color: rgba(255,255,255,.5); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; }
+    .hero-scroll span { width: 1px; height: 50px; background: linear-gradient(to bottom, rgba(255,255,255,.4), transparent); animation: scrollLine 2s ease-in-out infinite; }
+    @keyframes scrollLine { 0%,100%{opacity:0;transform:scaleY(0) translateY(0)} 50%{opacity:1;transform:scaleY(1) translateY(8px)} }
+
+    /* ── Section base ── */
+    section { padding: 100px 6%; }
+    .section-tag { display: inline-block; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 600; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; margin-bottom: 1.4rem; }
+    .section-divider { width: 60px; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-lt)); border-radius: 2px; margin-bottom: 1.6rem; }
+    .section-text { font-size: 1.05rem; line-height: 1.9; color: var(--text-lt); max-width: 560px; }
+
+    /* ── About ── */
+    .about { background: var(--white); }
+    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1200px; margin: 0 auto; }
+    .about-img-wrap { position: relative; }
+    .about-img-wrap img { width: 100%; height: 520px; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .about-badge {
+      position: absolute; bottom: -30px; right: -30px;
+      background: var(--gold); color: var(--dark);
+      width: 130px; height: 130px; border-radius: 50%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .about-badge strong { font-size: 2rem; line-height: 1; }
+    .about-badge span { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; margin-top: 2px; }
+    .about-stats { display: flex; gap: 2.5rem; margin-top: 2.5rem; }
+    .stat strong { display: block; font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold); }
+    .stat span { font-size: .82rem; color: var(--text-lt); text-transform: uppercase; letter-spacing: .08em; }
+
+    /* ── Specialties ── */
+    .specialties { background: var(--cream); }
+    .specialties-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
+    .specialties-header .section-divider { margin: 0 auto 1.6rem; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; max-width: 1200px; margin: 0 auto; }
+    .card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.07); transition: transform .3s, box-shadow .3s; }
+    .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .card-img { height: 220px; object-fit: cover; width: 100%; }
+    .card-body { padding: 28px; }
+    .card-icon { font-size: 1.6rem; margin-bottom: .8rem; }
+    .card-body h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: .6rem; color: var(--dark); }
+    .card-body p { font-size: .92rem; color: var(--text-lt); line-height: 1.7; }
+    .card-tag { display: inline-block; margin-top: 1rem; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+
+    /* ── Gallery ── */
+    .gallery { background: var(--dark); padding: 100px 6%; }
+    .gallery-header { text-align: center; margin-bottom: 50px; color: var(--white); }
+    .gallery-header .section-title { color: var(--white); }
+    .gallery-header .section-divider { margin: 0 auto 1.6rem; }
+
+    .gallery-carousel-wrap { position: relative; max-width: 1300px; margin: 0 auto; }
+    .gallery-carousel {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      overscroll-behavior-x: contain;
+      touch-action: pan-x;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 4px 4px 16px;
+    }
+    .gallery-carousel::-webkit-scrollbar { display: none; }
+    .g-slide {
+      flex: 0 0 clamp(240px, 32vw, 400px);
+      height: 380px;
+      border-radius: 10px;
+      overflow: hidden;
+      scroll-snap-align: start;
+      position: relative;
+      cursor: pointer;
+    }
+    .g-slide img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s ease;
+    }
+    .g-slide:hover img { transform: scale(1.06); }
+    .g-slide::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,18,8,.5) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity .3s ease;
+      pointer-events: none;
+    }
+    .g-slide:hover::after { opacity: 1; }
+
+    .gallery-dots {
+      display: flex; gap: 8px; justify-content: center; margin-top: 28px;
+    }
+    .gallery-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: rgba(255,255,255,.25);
+      border: none; cursor: pointer;
+      transition: background .3s, transform .3s;
+      padding: 0;
+    }
+    .gallery-dot.active { background: var(--gold); transform: scale(1.3); }
+    .gallery-dot:hover { background: rgba(255,255,255,.5); }
+    .gallery-dot:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .gallery-carousel { scroll-behavior: auto; }
+      .g-slide img, .g-slide::after { transition: none; }
+    }
+    @media (max-width: 600px) {
+      .g-slide { flex: 0 0 80vw; height: 280px; }
+    }
+
+    /* ── Info strip ── */
+    .info-strip { background: var(--dark2); color: var(--white); padding: 70px 6%; }
+    .info-inner { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+    .info-card { text-align: center; }
+    .info-card h4 { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; }
+    .info-card p { font-size: .95rem; line-height: 1.7; opacity: .85; }
+    .info-card a { color: var(--gold-lt); text-decoration: none; }
+    .info-card a:hover { text-decoration: underline; }
+
+    /* ── Reservation CTA ── */
+    .cta {
+      text-align: center; padding: 120px 6%;
+      background: linear-gradient(135deg, var(--dark) 0%, #3a2510 100%);
+      color: var(--white);
+    }
+    .cta .section-title { color: var(--white); }
+    .cta .section-divider { margin: 0 auto 1.6rem; }
+    .cta p { color: rgba(255,255,255,.75); font-size: 1.1rem; max-width: 480px; margin: 0 auto 2.4rem; line-height: 1.8; }
+
+    /* ── Reviews ── */
+    .reviews { background: var(--cream2); }
+    .reviews-header { text-align: center; margin-bottom: 60px; }
+    .reviews-header .section-divider { margin: 0 auto 1.6rem; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+    .review-card { background: var(--white); border-radius: var(--radius); padding: 32px; box-shadow: 0 4px 20px rgba(0,0,0,.06); }
+    .stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 1rem; }
+    .review-card p { font-style: italic; color: var(--text-lt); line-height: 1.8; font-size: .95rem; margin-bottom: 1.2rem; }
+    .reviewer { font-weight: 600; font-size: .88rem; color: var(--text); }
+
+    /* ── Map ── */
+    .map-section { background: var(--cream); padding: 0; }
+    .map-section iframe { width: 100%; height: 420px; border: none; display: block; }
+
+    /* ── Footer ── */
+    footer { background: var(--dark); color: rgba(255,255,255,.6); text-align: center; padding: 40px 6%; font-size: .85rem; }
+    footer strong { color: var(--gold); }
+    footer .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; list-style: none; }
+    footer .footer-links a { color: rgba(255,255,255,.5); text-decoration: none; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; transition: color .2s; }
+    footer .footer-links a:hover { color: var(--gold); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .about-inner { grid-template-columns: 1fr; gap: 50px; }
+      .about-img-wrap img { height: 360px; }
+      .about-badge { display: none; }
+      /* gallery carousel responsive handled via clamp + media query in block above */
+      .btn-outline { margin-left: 0; margin-top: .8rem; }
+    }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hero { position: relative; }
+    }
+
+    /* ── Scroll animations ── */
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Reservation Form ── */
+    .reservation { background: var(--cream2); padding: 100px 6%; }
+    .reservation-header { text-align: center; margin-bottom: 60px; }
+    .reservation-header .section-divider { margin: 0 auto 1.6rem; }
+    .reservation-inner { display: grid; grid-template-columns: 1fr 380px; gap: 60px; align-items: start; max-width: 1200px; margin: 0 auto; }
+    .form-card { background: var(--white); border-radius: var(--radius); padding: 40px; box-shadow: 0 4px 24px rgba(0,0,0,.08); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label { font-size: .82rem; font-weight: 600; color: var(--text); letter-spacing: .03em; }
+    .form-group label .req { color: var(--gold); margin-left: 2px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 11px 14px; border: 1.5px solid #ddd; border-radius: 8px;
+      font-family: 'Inter', sans-serif; font-size: .93rem; color: var(--text);
+      background: var(--white); transition: border-color .2s, box-shadow .2s; outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,.15); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-group select { cursor: pointer; }
+    .form-submit { grid-column: 1 / -1; }
+    .form-submit .btn { width: 100%; display: block; text-align: center; }
+    .form-note { grid-column: 1 / -1; text-align: center; font-size: .8rem; color: var(--text-lt); }
+    .form-note a { color: var(--gold); text-decoration: none; font-weight: 600; }
+    .form-msg { grid-column: 1 / -1; padding: 13px 16px; border-radius: 8px; font-size: .9rem; display: none; text-align: center; }
+    .form-msg.success { background: #e8f5e9; color: #2e7d32; display: block; }
+    .form-msg.error   { background: #fce4e4; color: #c62828; display: block; }
+
+    .res-info-card { background: var(--dark2); color: var(--white); border-radius: var(--radius); padding: 36px; box-shadow: var(--shadow); position: sticky; top: 100px; }
+    .res-info-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 1.6rem; color: var(--gold-lt); }
+    .res-info-item { display: flex; gap: 14px; margin-bottom: 1.4rem; align-items: flex-start; }
+    .res-info-item .ico { font-size: 1.3rem; flex-shrink: 0; }
+    .res-info-item div { font-size: .9rem; line-height: 1.7; opacity: .85; }
+    .res-info-item a { color: var(--gold-lt); text-decoration: none; }
+    .res-info-item a:hover { text-decoration: underline; }
+    .res-tel-btn { display: block; margin-top: 2rem; background: var(--gold); color: var(--dark); text-align: center; padding: 14px 20px; border-radius: 50px; font-weight: 700; font-size: .9rem; text-decoration: none; letter-spacing: .06em; transition: background .2s, transform .2s; }
+    .res-tel-btn:hover { background: var(--gold-lt); transform: translateY(-2px); }
+
+    @media (max-width: 960px) {
+      .reservation-inner { grid-template-columns: 1fr; }
+      .res-info-card { position: static; }
+    }
+    @media (max-width: 580px) {
+      .form-card { padding: 24px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: 1; }
+      .form-submit, .form-note, .form-msg { grid-column: 1; }
+    }
+
+    /* ── Chatbot FAB ── */
+    .chat-fab {
+      position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: var(--gold); color: var(--dark);
+      border: none; cursor: pointer; font-size: 1.45rem;
+      box-shadow: 0 8px 30px rgba(201,168,76,.5);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .22s, background .22s;
+    }
+    .chat-fab:hover { background: var(--gold-lt); transform: scale(1.08); }
+    .chat-window {
+      position: fixed; bottom: 100px; right: 28px; z-index: 9998;
+      width: 340px; background: var(--white); border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.22);
+      display: flex; flex-direction: column; overflow: hidden;
+      opacity: 0; transform: translateY(16px) scale(.97); pointer-events: none;
+      transition: opacity .25s, transform .25s;
+    }
+    .chat-window.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
+    .chat-header { background: var(--dark2); color: var(--white); padding: 14px 18px; display: flex; align-items: center; gap: 12px; }
+    .chat-avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .chat-header-info { flex: 1; }
+    .chat-header-info strong { display: block; font-size: .92rem; }
+    .chat-header-info span { font-size: .72rem; opacity: .6; }
+    .chat-close { background: none; border: none; color: rgba(255,255,255,.55); cursor: pointer; font-size: 1.2rem; line-height: 1; padding: 0; transition: color .2s; }
+    .chat-close:hover { color: var(--white); }
+    .chat-messages { overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; max-height: 300px; min-height: 160px; }
+    .chat-bubble { max-width: 82%; padding: 9px 13px; border-radius: 14px; font-size: .87rem; line-height: 1.55; word-break: break-word; }
+    .chat-bubble.bot  { background: var(--cream2); color: var(--text); align-self: flex-start; border-bottom-left-radius: 4px; }
+    .chat-bubble.user { background: var(--gold); color: var(--dark); align-self: flex-end; border-bottom-right-radius: 4px; font-weight: 500; }
+    .chat-bubble.typing { opacity: .55; font-style: italic; }
+    .chat-input-row { padding: 10px 14px; border-top: 1px solid var(--cream2); display: flex; gap: 8px; }
+    .chat-input-row input { flex: 1; border: 1.5px solid #ddd; border-radius: 50px; padding: 9px 15px; font-size: .87rem; font-family: 'Inter', sans-serif; outline: none; transition: border-color .2s; }
+    .chat-input-row input:focus { border-color: var(--gold); }
+    .chat-send { background: var(--dark2); color: var(--white); border: none; border-radius: 50%; width: 36px; height: 36px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background .2s; }
+    .chat-send:hover { background: var(--gold); color: var(--dark); }
+    @media (max-width: 400px) {
+      .chat-window { width: calc(100vw - 40px); right: 20px; }
+      .chat-fab { right: 20px; bottom: 20px; }
+    }
+
+    /* ── Instagram CTA ── */
+    .ig-cta {
+      background: linear-gradient(135deg, var(--dark) 0%, #2c1f0e 50%, #1a1208 100%);
+      padding: 90px 6%; text-align: center; color: var(--white);
+      position: relative; overflow: hidden;
+    }
+    .ig-cta::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .ig-cta-inner { position: relative; max-width: 600px; margin: 0 auto; }
+    .ig-cta-icon { width: 64px; height: 64px; margin: 0 auto 1.4rem; color: var(--gold); display: flex; align-items: center; justify-content: center; }
+    .ig-cta-icon svg { width: 100%; height: 100%; }
+    .ig-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.2; margin-bottom: .8rem; color: var(--white); }
+    .ig-cta p { font-size: 1.05rem; color: rgba(255,255,255,.72); line-height: 1.8; margin: 0 auto 2rem; max-width: 440px; }
+    .btn-ig {
+      display: inline-flex; align-items: center; gap: .6rem;
+      padding: 15px 36px; border-radius: 50px;
+      background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+      color: var(--white); font-size: .9rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase; text-decoration: none;
+      transition: opacity .25s, transform .25s, box-shadow .25s;
+      box-shadow: 0 8px 28px rgba(131,58,180,.35);
+    }
+    .btn-ig:hover { opacity: .9; transform: translateY(-2px); box-shadow: 0 14px 36px rgba(131,58,180,.5); }
+    .btn-ig svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .info-icon-svg { display: flex; justify-content: center; margin-bottom: .8rem; }
+    .info-icon-svg svg { width: 2rem; height: 2rem; color: var(--gold); }
+    .footer-ig-link { display: inline-flex; align-items: center; gap: .4rem; }
+    .footer-ig-link svg { width: 14px; height: 14px; }
+
+    /* ── Focus visible ── */
+    .nav-links a:focus-visible,
+    .btn:focus-visible,
+    .chat-fab:focus-visible,
+    .chat-close:focus-visible,
+    .chat-send:focus-visible,
+    .chat-input-row input:focus-visible,
+    .btn-ig:focus-visible,
+    .res-tel-btn:focus-visible,
+    footer .footer-links a:focus-visible,
+    .info-card a:focus-visible,
+    .res-info-item a:focus-visible,
+    .form-note a:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    /* ── Reduced motion global ── */
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { transition: none; opacity: 1; transform: none; }
+      .hero-scroll span { animation: none; }
+      .card, .btn, .chat-window, .chat-fab, .g-slide img { transition: none; }
+    }
+
+    /* ── Hamburger menu ── */
+    .nav-hamburger {
+      display: none; background: none; border: none; cursor: pointer;
+      color: var(--white); padding: 4px;
+    }
+    .nav-hamburger svg { display: block; }
+    .nav-hamburger:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    @media (max-width: 600px) {
+      .nav-hamburger { display: flex; align-items: center; justify-content: center; }
+      .nav-links {
+        display: none; flex-direction: column; position: absolute;
+        top: 100%; left: 0; width: 100%;
+        background: rgba(26,18,8,.97); padding: 1rem 6% 1.5rem;
+        gap: 1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: 1rem; }
+      .nav-links .btn { padding: 12px 22px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#inicio" class="nav-logo">Casa Félix</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#especialidades">Especialidades</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#reservar" class="btn btn-gold" style="padding:10px 22px;font-size:.8rem;">Reservar</a></li>
+    </ul>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú de navegación" aria-expanded="false">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-badge">Villarrobledo, Albacete · Desde la tradición manchega</div>
+    <h1>Sabores de <em>La Mancha</em><br>con alma propia</h1>
+    <p>Cocina española auténtica en el corazón de Castilla–La Mancha. Ingredientes de temporada, recetas de siempre y una mesa que sabe a hogar.</p>
+    <div>
+      <a href="#reservar" class="btn btn-gold">Reservar mesa</a>
+      <a href="#especialidades" class="btn btn-outline">Ver carta</a>
+    </div>
+    <div class="hero-scroll">Descubrir<span></span></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="nosotros">
+    <div class="about-inner">
+      <div class="about-img-wrap fade-up">
+        <img src="imagenes/thumbs/IMG_9460.webp" alt="Interior Casa Félix" />
+        <div class="about-badge">
+          <strong>#12</strong>
+          <span>en Villarrobledo</span>
+        </div>
+      </div>
+      <div class="fade-up">
+        <span class="section-tag">Nuestra historia</span>
+        <h2 class="section-title">Un rincón de La Mancha<br>en cada plato</h2>
+        <div class="section-divider"></div>
+        <p class="section-text">Restaurante Casa Félix es un referente de la cocina tradicional manchega en Villarrobledo. Con una amplia trayectoria, ofrecemos lo mejor de nuestra tierra: platos de cuchara, carnes guisadas y mariscos seleccionados, todo ello en un ambiente cálido y familiar donde cada cliente es un invitado de honor.</p>
+        <p class="section-text" style="margin-top:1rem;">Nuestra carta, disponible también en inglés y francés, refleja el compromiso con la calidad y la autenticidad sin renunciar a la hospitalidad característica de esta tierra.</p>
+        <div class="about-stats">
+          <div class="stat"><strong>42</strong><span>plazas</span></div>
+          <div class="stat"><strong>3.6★</strong><span>TripAdvisor</span></div>
+          <div class="stat"><strong>2</strong><span>idiomas</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIALTIES -->
+  <section class="specialties" id="especialidades">
+    <div class="specialties-header fade-up">
+      <span class="section-tag">Nuestra carta</span>
+      <h2 class="section-title">Las estrellas de la casa</h2>
+      <div class="section-divider"></div>
+      <p style="color:var(--text-lt);line-height:1.8;">Platos elaborados con ingredientes frescos y la sabiduría de la cocina castellana. Una experiencia gastronómica que celebra el territorio.</p>
+    </div>
+    <div class="cards">
+      <div class="card fade-up">
+        <img class="card-img" src="imagenes/thumbs/IMG_9476.webp" alt="Manitas de cerdo" />
+        <div class="card-body">
+          <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21c-1.5 0-3-.5-4-1.5C6 18 5 16 5 14c0-3 2.5-4 4-6s2-4 3-4 1.5 2 3 4 4 3 4 6c0 2-1 4-3 5.5-1 1-2.5 1.5-4 1.5z"/><path d="M8 14c-.5-1-1.5-2-1.5-3.5S7.5 8 8 8"/><path d="M16 14c.5-1 1.5-2 1.5-3.5S16.5 8 16 8"/></svg></div>
+          <h3>Manitas de cerdo en salsa</h3>
+          <p>La especialidad de la casa. Guisadas a fuego lento en una salsa tradicional manchega que concentra todos los sabores de nuestra tierra.</p>
+          <span class="card-tag">Especialidad de la casa</span>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <img class="card-img" src="imagenes/thumbs/IMG_9471.webp" alt="Chuletón de vaca rubia" />
+        <div class="card-body">
+          <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/></svg></div>
+          <h3>Chuletón de vaca rubia</h3>
+          <p>Pieza de chuletón seleccionada, cocinada a la brasa hasta lograr el punto perfecto. Sabor intenso y auténtico de la mejor carne.</p>
+          <span class="card-tag">Plato tradicional</span>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <img class="card-img" src="imagenes/thumbs/IMG_9466.webp" alt="Gambas al ajillo" />
+        <div class="card-body">
+          <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16s1-4 4-4 4 4 4 4"/><path d="M10 16s1-4 4-4 4 4 4 4"/><path d="M18 16s1-4 4-4"/><path d="M2 12s1-4 4-4 4 4 4 4"/><path d="M10 12s1-4 4-4 4 4 4 4"/><path d="M18 12s1-4 4-4"/></svg></div>
+          <h3>Gambas al ajillo</h3>
+          <p>Gambas frescas salteadas en aceite de oliva con ajo y un toque de guindilla. Un clásico irresistible servido bien caliente en cazuela de barro.</p>
+          <span class="card-tag">Cocina de mar y tierra</span>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <img class="card-img" src="imagenes/thumbs/IMG_9478.webp" alt="Torrija casera" />
+        <div class="card-body">
+          <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2h8l4 10H4L8 2z"/><path d="M12 12v6"/><path d="M8 22h8"/><path d="M12 18h0"/><circle cx="12" cy="12" r="1"/></svg></div>
+          <h3>Torrija casera</h3>
+          <p>El cierre perfecto para una gran comida. Nuestra torrija, dorada y cremosa, servida con crema y helado. Un postre que enamora.</p>
+          <span class="card-tag">Postre estrella</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="galeria">
+    <div class="gallery-header fade-up">
+      <span class="section-tag" style="color:var(--gold-lt);">Galería</span>
+      <h2 class="section-title">Una imagen dice más<br>que mil palabras</h2>
+      <div class="section-divider" style="margin:0 auto 0;"></div>
+    </div>
+    <div class="gallery-carousel-wrap" style="margin-top:50px;">
+      <div class="gallery-carousel" id="galleryCarousel" role="region" aria-label="Galería de fotos de Casa Félix">
+        <div class="g-slide"><img src="imagenes/thumbs/IMG_9465.webp" alt="Zamburiñas a la plancha" loading="lazy" /></div>
+        <div class="g-slide"><img src="imagenes/thumbs/IMG_9460.webp" alt="Gambas frescas en hielo" loading="lazy" /></div>
+        <div class="g-slide"><img src="imagenes/thumbs/IMG_9469.webp" alt="Ostras frescas" loading="lazy" /></div>
+        <div class="g-slide"><img src="imagenes/thumbs/IMG_9468.webp" alt="Pulpo crujiente" loading="lazy" /></div>
+        <div class="g-slide"><img src="imagenes/thumbs/IMG_9474.webp" alt="Pulpo a la parrilla" loading="lazy" /></div>
+        <div class="g-slide"><img src="imagenes/thumbs/IMG_9475.webp" alt="Lubina salvaje a nuestro estilo" loading="lazy" /></div>
+        <div class="g-slide"><img src="imagenes/thumbs/IMG_9467.webp" alt="Croquetas caseras" loading="lazy" /></div>
+        <div class="g-slide"><img src="imagenes/thumbs/IMG_9462.webp" alt="Atún rojo de Tarifa" loading="lazy" /></div>
+        <div class="g-slide"><img src="imagenes/thumbs/IMG_9463.webp" alt="Jamón ibérico de bellota" loading="lazy" /></div>
+        <div class="g-slide"><img src="imagenes/thumbs/IMG_9470.webp" alt="Torrija con helado" loading="lazy" /></div>
+        <div class="g-slide"><img src="imagenes/thumbs/IMG_9473.webp" alt="Tarta de la abuela" loading="lazy" /></div>
+        <div class="g-slide"><img src="imagenes/thumbs/IMG_9480.webp" alt="Tarta de la abuela flambeada" loading="lazy" /></div>
+        <div class="g-slide"><img src="imagenes/thumbs/IMG_9479.webp" alt="Sala del restaurante" loading="lazy" /></div>
+      </div>
+      <div class="gallery-dots" id="galleryDots" aria-label="Indicadores de galería"></div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM CTA -->
+  <section class="ig-cta">
+    <div class="ig-cta-inner fade-up">
+      <div class="ig-cta-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+      </div>
+      <h2>Síguenos en Instagram</h2>
+      <p>Descubre cada día los mejores platos de La Mancha, el ambiente de nuestra sala y los momentos especiales de Casa Félix.</p>
+      <a href="https://www.instagram.com/felixcasarestaurante/" target="_blank" rel="noopener noreferrer" class="btn btn-ig" aria-label="Seguir a Casa Félix en Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        @felixcasarestaurante
+      </a>
+    </div>
+  </section>
+
+  <!-- INFO STRIP -->
+  <div class="info-strip" id="contacto">
+    <div class="info-inner">
+      <div class="info-card fade-up">
+        <div class="info-icon-svg"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h4>Dirección</h4>
+        <p>Senda Molinera, 6<br>02600 Villarrobledo<br>Albacete, España</p>
+      </div>
+      <div class="info-card fade-up">
+        <div class="info-icon-svg"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h4>Horario</h4>
+        <p>Lunes – Domingo<br>11:00 h – 01:00 h<br><small style="opacity:.6;">Abierto todos los días</small></p>
+      </div>
+      <div class="info-card fade-up">
+        <div class="info-icon-svg"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.69 2.36a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.76.33 1.55.56 2.36.69a2 2 0 0 1 1.72 2.04z"/></svg></div>
+        <h4>Teléfono</h4>
+        <p><a href="tel:+34967143375">+34 967 14 33 75</a></p>
+      </div>
+      <div class="info-card fade-up">
+        <div class="info-icon-svg"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <h4>Servicios</h4>
+        <p>Reservas · Alcohol<br>Acceso adaptado<br>Carta en EN &amp; FR</p>
+      </div>
+      <div class="info-card fade-up">
+        <div class="info-icon-svg">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <h4>Instagram</h4>
+        <p><a href="https://www.instagram.com/felixcasarestaurante/" target="_blank" rel="noopener noreferrer">@felixcasarestaurante</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <div class="reviews-header fade-up">
+      <span class="section-tag">Opiniones</span>
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card fade-up">
+        <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p>"Una cocina manchega auténtica y de primer nivel. Los precios son muy razonables para la calidad que ofrecen. Un lugar imprescindible si visitas Villarrobledo."</p>
+        <span class="reviewer">— Visitante en TripAdvisor</span>
+      </div>
+      <div class="review-card fade-up">
+        <div class="stars" role="img" aria-label="4 de 5 estrellas">★★★★☆</div>
+        <p>"La calidad de la comida es excelente, presentaciones de la más alta calidad. Las manitas de cerdo en salsa son simplemente espectaculares. Volveré sin duda."</p>
+        <span class="reviewer">— Visitante en TripAdvisor</span>
+      </div>
+      <div class="review-card fade-up">
+        <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p>"Un restaurante imprescindible para los amantes de la cocina auténtica de La Mancha. El ambiente es cálido y el trato es exquisito. La tarta de la abuela, increíble."</p>
+        <span class="reviewer">— Visitante en TripAdvisor</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVATION FORM -->
+  <section class="reservation" id="reservar">
+    <div class="reservation-header fade-up">
+      <span class="section-tag">Reservas</span>
+      <h2 class="section-title">Reserva tu Mesa</h2>
+      <div class="section-divider"></div>
+      <p style="color:var(--text-lt);line-height:1.8;">Asegura tu sitio y disfruta de una experiencia gastronómica inolvidable.</p>
+    </div>
+    <div class="reservation-inner">
+      <!-- Form -->
+      <div class="form-card fade-up">
+        <form id="reservaForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="r-nombre">Nombre completo <span class="req">*</span></label>
+              <input type="text" id="r-nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="r-tel">Teléfono <span class="req">*</span></label>
+              <input type="tel" id="r-tel" name="telefono" placeholder="600 000 000" required autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="r-email">Email</label>
+              <input type="email" id="r-email" name="email" placeholder="tu@email.com" autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="r-personas">Nº de personas <span class="req">*</span></label>
+              <select id="r-personas" name="personas" required>
+                <option value="">Seleccionar</option>
+                <option value="1-2">1 – 2 personas</option>
+                <option value="3-4">3 – 4 personas</option>
+                <option value="5-6">5 – 6 personas</option>
+                <option value="7-8">7 – 8 personas</option>
+                <option value="+8">Más de 8</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="r-fecha">Fecha <span class="req">*</span></label>
+              <input type="date" id="r-fecha" name="fecha" required />
+            </div>
+            <div class="form-group">
+              <label for="r-servicio">Servicio <span class="req">*</span></label>
+              <select id="r-servicio" name="servicio" required>
+                <option value="">Seleccionar</option>
+                <option value="almuerzo">Almuerzo</option>
+                <option value="cena">Cena</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="r-hora">Hora preferida <span class="req">*</span></label>
+              <select id="r-hora" name="hora" required disabled>
+                <option value="">Seleccionar servicio primero</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="r-comentarios">Comentarios o peticiones especiales</label>
+              <textarea id="r-comentarios" name="comentarios" placeholder="Alergias, celebraciones, preferencias de mesa..."></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn btn-gold">Solicitar Reserva</button>
+            </div>
+            <p class="form-note"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.69 2.36a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.76.33 1.55.56 2.36.69a2 2 0 0 1 1.72 2.04z"/></svg>Para reservas urgentes o grupos grandes, llámanos al <a href="tel:+34967143375">967 143 375</a></p>
+            <div class="form-msg" id="formMsg"></div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Info lateral -->
+      <div class="res-info-card fade-up">
+        <h3>Información de contacto</h3>
+        <div class="res-info-item">
+          <span class="ico"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div>Senda Molinera, 6<br>02600 Villarrobledo<br>Albacete, España</div>
+        </div>
+        <div class="res-info-item">
+          <span class="ico"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          <div>Lunes – Domingo<br>11:00 h – 01:00 h<br><small style="opacity:.6;">Abierto todos los días</small></div>
+        </div>
+        <div class="res-info-item">
+          <span class="ico"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.69 2.36a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.76.33 1.55.56 2.36.69a2 2 0 0 1 1.72 2.04z"/></svg></span>
+          <div><a href="tel:+34967143375">+34 967 14 33 75</a></div>
+        </div>
+        <div class="res-info-item">
+          <span class="ico"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+          <div>Reservas · Alcohol · Acceso adaptado<br>Carta disponible en EN &amp; FR</div>
+        </div>
+        <a href="tel:+34967143375" class="res-tel-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:6px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.69 2.36a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.76.33 1.55.56 2.36.69a2 2 0 0 1 1.72 2.04z"/></svg>Llamar ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <div class="map-section">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3085.123!2d-2.6047418!3d39.2708938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6887c20b08b38f%3A0x40221c23dd2d771f!2sRestaurante%20Casa%20F%C3%A9lix!5e0!3m2!1ses!2ses!4v1711300000000"
+      allowfullscreen=""
+      loading="lazy"
+      title="Ubicación Casa Félix">
+    </iframe>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <ul class="footer-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#especialidades">Carta</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li>
+        <a href="https://www.instagram.com/felixcasarestaurante/" target="_blank" rel="noopener noreferrer" class="footer-ig-link" aria-label="Instagram de Casa Félix">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </a>
+      </li>
+    </ul>
+    <p>&copy; 2026 <strong>Restaurante Casa Félix</strong> · Senda Molinera 6, Villarrobledo (Albacete) · <a href="tel:+34967143375" style="color:var(--gold-lt);text-decoration:none;">967 14 33 75</a></p>
+  </footer>
+
+  <!-- CHATBOT FAB -->
+  <button class="chat-fab" id="chatFab" aria-label="Abrir asistente virtual"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>
+  <div class="chat-window" id="chatWindow" role="dialog" aria-label="Asistente de Casa Félix">
+    <div class="chat-header">
+      <div class="chat-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg></div>
+      <div class="chat-header-info">
+        <strong>Asistente de Casa Félix</strong>
+        <span>Estoy aquí para ayudarte</span>
+      </div>
+      <button class="chat-close" id="chatClose" aria-label="Cerrar chat"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="chat-messages" id="chatMessages"></div>
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Escribe tu mensaje..." autocomplete="off" />
+      <button class="chat-send" id="chatSend" aria-label="Enviar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // ── Hamburger menu ──
+    const hamburger = document.getElementById('navHamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ── Nav scroll ──
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // ── Scroll animations ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // ── Reservation form: min date = today ──
+    document.getElementById('r-fecha').min = new Date().toISOString().split('T')[0];
+
+    // ── Dynamic hour select based on service ──
+    const horasAlmuerzo = ['11:00','11:30','12:00','12:30','13:00','13:30','14:00','14:30','15:00','15:30','16:00','16:30'];
+    const horasCena     = ['20:00','20:30','21:00','21:30','22:00','22:30','23:00','23:30','00:00','00:30'];
+    const servicioSel   = document.getElementById('r-servicio');
+    const horaSel       = document.getElementById('r-hora');
+
+    servicioSel.addEventListener('change', () => {
+      const horas = servicioSel.value === 'almuerzo' ? horasAlmuerzo
+                  : servicioSel.value === 'cena'     ? horasCena
+                  : [];
+      horaSel.innerHTML = horas.length
+        ? '<option value="">Seleccionar hora</option>' + horas.map(h => `<option value="${h}">${h} h</option>`).join('')
+        : '<option value="">Seleccionar servicio primero</option>';
+      horaSel.disabled = horas.length === 0;
+    });
+
+    // ── Reservation form submit ──
+    document.getElementById('reservaForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const msg = document.getElementById('formMsg');
+      msg.className = 'form-msg';
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+
+      const data = Object.fromEntries(new FormData(e.target));
+      try {
+        // TODO: Si cambias el workflow de n8n, actualiza esta URL con la nueva URL de producción del webhook
+      const res = await fetch('https://prueba-n8n.sdon6e.easypanel.host/webhook/casafelix-chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ tipo: 'reserva', ...data })
+        });
+        if (res.ok) {
+          msg.textContent = 'Reserva solicitada. Te confirmaremos por teléfono en breve.';
+          msg.className = 'form-msg success';
+          e.target.reset();
+          horaSel.innerHTML = '<option value="">Seleccionar servicio primero</option>';
+          horaSel.disabled = true;
+        } else {
+          throw new Error('server');
+        }
+      } catch {
+        msg.textContent = 'Algo ha fallado. Por favor llámanos al 967 14 33 75.';
+        msg.className = 'form-msg error';
+      }
+      btn.disabled = false;
+      btn.textContent = 'Solicitar Reserva';
+    });
+
+    // ── Chatbot ──
+    // URL de producción del webhook de n8n
+    const WEBHOOK = 'https://prueba-n8n.sdon6e.easypanel.host/webhook/casafelix-chat';
+    // NOTA: El system prompt del chatbot se gestiona en el backend (n8n), NO en el cliente.
+    const SESSION_ID = Math.random().toString(36).slice(2);
+    const fab        = document.getElementById('chatFab');
+    const win        = document.getElementById('chatWindow');
+    const closeBtn   = document.getElementById('chatClose');
+    const input      = document.getElementById('chatInput');
+    const sendBtn    = document.getElementById('chatSend');
+    const messages   = document.getElementById('chatMessages');
+    let chatOpen     = false;
+    let waitingReply = false;
+
+    function addBubble(text, role) {
+      const b = document.createElement('div');
+      b.className = `chat-bubble ${role}`;
+      b.textContent = text;
+      messages.appendChild(b);
+      messages.scrollTop = messages.scrollHeight;
+      return b;
+    }
+
+    function openChat() {
+      chatOpen = true;
+      win.classList.add('open');
+      fab.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+      if (messages.children.length === 0) {
+        addBubble('¡Hola! Soy el asistente de Casa Félix. ¿En qué puedo ayudarte? Puedo informarte sobre nuestra carta, horarios, reservas y más.', 'bot');
+      }
+      input.focus();
+    }
+
+    function closeChat() {
+      chatOpen = false;
+      win.classList.remove('open');
+      fab.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
+    }
+
+    fab.addEventListener('click', () => chatOpen ? closeChat() : openChat());
+    closeBtn.addEventListener('click', closeChat);
+
+    async function sendMessage() {
+      const text = input.value.trim();
+      if (!text || waitingReply) return;
+      input.value = '';
+      addBubble(text, 'user');
+      waitingReply = true;
+      const typing = addBubble('Escribiendo...', 'bot typing');
+
+      try {
+        const res = await fetch(WEBHOOK, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ tipo: 'chat', message: text, session: SESSION_ID, timestamp: new Date().toISOString() })
+        });
+        const json = await res.json().catch(() => ({}));
+        typing.remove();
+        const reply = json.response || json.message || json.text || json.output || '¡Gracias por tu mensaje! Para más información llámanos al 967 14 33 75.';
+        addBubble(reply, 'bot');
+      } catch {
+        typing.remove();
+        addBubble('Lo siento, no puedo responder ahora mismo. Llámanos al 967 14 33 75.', 'bot');
+      }
+      waitingReply = false;
+    }
+
+    sendBtn.addEventListener('click', sendMessage);
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') sendMessage(); });
+
+    // ── Gallery mouse-follow carousel ──
+    const galleryCarousel = document.getElementById('galleryCarousel');
+    const galleryDots = document.getElementById('galleryDots');
+    const slides = galleryCarousel.querySelectorAll('.g-slide');
+    let currentSlide = 0;
+    let scrollSpeed = 0;
+    let rafId = null;
+
+    // Create dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Foto ${i + 1}`);
+      dot.addEventListener('click', () => {
+        slides[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      });
+      galleryDots.appendChild(dot);
+    });
+
+    function updateDots() {
+      const scrollLeft = galleryCarousel.scrollLeft;
+      const slideW = slides[0].offsetWidth + 14;
+      const newIndex = Math.round(scrollLeft / slideW);
+      if (newIndex !== currentSlide && newIndex >= 0 && newIndex < slides.length) {
+        currentSlide = newIndex;
+        galleryDots.querySelectorAll('.gallery-dot').forEach((d, i) => {
+          d.classList.toggle('active', i === currentSlide);
+        });
+      }
+    }
+
+    // Continuous scroll loop driven by mouse position
+    function scrollLoop() {
+      if (scrollSpeed !== 0) {
+        galleryCarousel.scrollLeft += scrollSpeed;
+        updateDots();
+      }
+      rafId = requestAnimationFrame(scrollLoop);
+    }
+
+    galleryCarousel.addEventListener('mouseenter', () => {
+      galleryCarousel.style.scrollSnapType = 'none';
+      galleryCarousel.style.scrollBehavior = 'auto';
+      rafId = requestAnimationFrame(scrollLoop);
+    });
+
+    galleryCarousel.addEventListener('mouseleave', () => {
+      scrollSpeed = 0;
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+      galleryCarousel.style.scrollSnapType = 'x mandatory';
+      galleryCarousel.style.scrollBehavior = 'smooth';
+    });
+
+    galleryCarousel.addEventListener('mousemove', (e) => {
+      const rect = galleryCarousel.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const pct = x / rect.width;          // 0 = left edge, 1 = right edge
+      const deadZone = 0.15;               // 15% center = no movement
+      const maxSpeed = 4;
+
+      if (pct < 0.5 - deadZone) {
+        // Left zone: scroll left (negative). Faster near edge.
+        scrollSpeed = -maxSpeed * (1 - pct / (0.5 - deadZone));
+      } else if (pct > 0.5 + deadZone) {
+        // Right zone: scroll right (positive). Faster near edge.
+        scrollSpeed = maxSpeed * ((pct - 0.5 - deadZone) / (0.5 - deadZone));
+      } else {
+        scrollSpeed = 0;
+      }
+    });
+
+    // Sync dots on manual scroll / touch
+    galleryCarousel.addEventListener('scroll', updateDots, { passive: true });
+  </script>
+</body>
+</html>
